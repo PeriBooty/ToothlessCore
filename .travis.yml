@@ -3,3 +3,11 @@ node_js:
   - "node"
 before_install:
   - npm i better-sqlite3 coloredtext discord.js
+after_success:
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK
+after_failure:
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  chmod +x send.sh
+  - ./send.sh failure $WEBHOOK
