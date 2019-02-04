@@ -20,7 +20,7 @@ module.exports = class modBlacklist {
 				__args = __args.replace(/>$/, "");
 			}
 			const user = this.client.users.get(__args);
-			const blacklisted = this.client.database.prepare("SELECT * FROM Blacklist WHERE ID = ?").get(__args)
+			const blacklisted = this.client.database.prepare("SELECT * FROM Blacklist WHERE ID = ?").get(__args);
 			if (!blacklisted) {
 				this.client.database.prepare("INSERT INTO Blacklist VALUES (?)").run(__args);
 				return msg.channel.send(`Blacklisted ${user.tag}.`);
@@ -32,7 +32,7 @@ module.exports = class modBlacklist {
 				__args = __args.replace(/>$/, "");
 			}
 			const user = this.client.users.get(__args);
-			const blacklisted = this.client.database.prepare("SELECT * FROM Blacklist WHERE ID = ?").get(__args)
+			const blacklisted = this.client.database.prepare("SELECT * FROM Blacklist WHERE ID = ?").get(__args);
 			if (blacklisted) {
 				this.client.database.prepare("DELETE FROM Blacklist WHERE ID = ?").run(__args);
 				return msg.channel.send(`Removed the blacklisting for ${user.tag}.`);

@@ -14,4 +14,4 @@ module.exports = {
 		DND: 0xff0000,
 		STREAMING: 0x800080
 	}
-}
+};

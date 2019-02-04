@@ -1,6 +1,6 @@
 String.prototype.toTitleCase = function() {
 	return this.split(/ +/).map(str => str.replace(/^./, c => c.toUpperCase())).join(" ");
-}
+};
 
 const {prefix} = require("../config.json");
 const {RichEmbed} = require("discord.js");

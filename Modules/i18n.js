@@ -60,5 +60,4 @@ module.exports = class i18n {
 				return tr;
 		}
 	}
-
-}
+};

@@ -16,7 +16,7 @@ module.exports = class modBulkRemove {
 		if (parseInt(args) > 100) return msg.channel.send("Hmm, that number's a bit high. Try something smaller.").then(async m => {
 			await msg.delete(5000);
 			await m.delete(5000);
-		})
+		});
 		await msg.delete();
 		msg.channel.bulkDelete(parseInt(args)).then(msgs => {
 			msg.channel.send(`Deleted ${msgs.size} messages.`).then(m => {

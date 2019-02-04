@@ -5,7 +5,7 @@ const config = require("../config.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 const PermissionChecker = require("./PermissionChecker");
-const {MessageCollector, RichEmbed} = Discord;
+const {RichEmbed} = Discord;
 
 /*** Set variables ***/
 

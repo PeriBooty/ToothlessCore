@@ -16,7 +16,7 @@ module.exports = class modAddQuote {
 		let tag = quote.shift();
 		let quotes = this.client.database.prepare("SELECT * FROM Quotes WHERE tag = ?").all(tag);
 		let highest;
-		highest = quotes.length ? quotes[quotes.length -1].ID : 0
+		highest = quotes.length ? quotes[quotes.length -1].ID : 0;
 		quote = quote.join(" ");
 		try {
 			let query = this.client.database.prepare("INSERT INTO Quotes VALUES (?, ?, ?, ?)").run(tag, quote, ++highest, msg.author.id);

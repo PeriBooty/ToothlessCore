@@ -23,4 +23,4 @@ module.exports = class modEval {
 			msg.channel.send(`:x: **ERROR**\`\`\`js\n${err.stack}\`\`\``);
 		}
 	}
-}
+};

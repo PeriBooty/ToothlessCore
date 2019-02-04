@@ -1,7 +1,8 @@
 {
 		"env": {
 			"es6": true,
-			"commonjs": true
+			"commonjs": true,
+			"browser": true
 		},
 		"parserOptions": {
 			"ecmaVersion": 2018
@@ -251,7 +252,7 @@
 			"require-await": "off",
 			"require-jsdoc": "off",
 			"rest-spread-spacing": "off",
-			"semi": "off",
+			"semi": "error",
 			"semi-spacing": "off",
 			"semi-style": "off",
 			"sort-imports": "off",

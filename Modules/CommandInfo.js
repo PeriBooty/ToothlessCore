@@ -1,6 +1,6 @@
 String.prototype.toTitleCase = function() {
 	return this.split(/ +/).map(str => str.replace(/^./, c => c.toUpperCase())).join(" ");
-}
+};
 const {RichEmbed: Embed} = require("discord.js");
 const {prefix} = require("../config.json");
 
@@ -26,4 +26,4 @@ module.exports = class CommandInfo {
 		embed.addField("Usage", `\`\`\`css\n${prefix}${cmd.name} ${cmd.info.usage}\`\`\``);
 		return embed;
 	}
-}
+};
