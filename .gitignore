@@ -2,3 +2,4 @@ config.json
 Toothless.sqlite
 .git/
 .DS_Store
+node_modules/

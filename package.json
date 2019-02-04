@@ -1,7 +1,7 @@
 {
-  "name": "furoverflow",
+  "name": "toothlesscore",
   "version": "1.0.0",
-  "description": "The main bot for the FurOverflow server",
+  "description": "ToothlessCore – Immo's bot core for JS",
   "main": "bot.js",
   "scripts": {
     "start": "pm2 start bot.js --name \"Toothless\"",
@@ -11,18 +11,13 @@
   },
   "keywords": [
     "bot",
-    "furoverflow",
     "discord"
   ],
   "author": "Immo <seiryu@derg.immo>",
   "license": "AGPL-3.0",
   "dependencies": {
     "better-sqlite3": "^4.1.4",
-    "cheerio": "^1.0.0-rc.2",
     "coloredtext": "^1.1.1",
     "discord.js": "^11.3.2",
-    "ini": "^1.3.5",
-    "mathjs": "^5.0.4",
-    "node-superfetch": "^0.1.3"
   }
 }
