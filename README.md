@@ -24,7 +24,7 @@ module.exports = class modName {
 ```
 
 # Contributions
-If you know of a way to improve the code, feel free to send a PR. You can also look at the [Todo list](/projects/1) to see if there are any issues you know how to fix.
+If you know of a way to improve the code, feel free to send a PR. You can also look at the [Todo list](../../projects/1) to see if there are any issues you know how to fix.
 
 # Legal info
 lol there aren't any. just follow the license lol.
