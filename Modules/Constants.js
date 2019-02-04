@@ -1,0 +1,17 @@
+module.exports = {
+	DEFAULT_LANG: "en_US",
+	EMOTES: {
+		ONLINE: "<:online:475767795507003413>",
+		OFFLINE: "<:offline:475767887924035595>",
+		IDLE: "<:idle:475768046863122444>",
+		DND: "<:dnd:475768133810913291>",
+		STREAMING: "<:streaming:475767620449206273>"
+	},
+	COLORS: {
+		ONLINE: 0x00ff00,
+		OFFLINE: 0x2C2F33,
+		IDLE: 0xffff00,
+		DND: 0xff0000,
+		STREAMING: 0x800080
+	}
+}

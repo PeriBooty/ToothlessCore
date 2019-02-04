@@ -1,0 +1,6 @@
+{
+	"error.permission": "I'm sorry, {user.username}, I can't do that.",
+	"quote.added": ":white_check_mark: Quote added. ID: ",
+	"quote.error": ":x: An error occurred...",
+	"debug.multi": "{ctx.author.tag} {ctx.author.username}"
+}
