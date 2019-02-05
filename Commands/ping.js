@@ -14,7 +14,7 @@ module.exports = class modPing {
 		const heartbeat = Math.round(this.client.ping);
 		const timeThen = Date.now();
 		msg.channel.send("Ping!").then(m => {
-			m.edit(`Pong!\n**Heartbeat**: ${heartbeat} ms\n**Message latency**: ${Date.now() - timeThen} ms`);
+			m.edit(this.client.i18n.translate(msg, 'ping.final', heartbeat, Date.now() - timeThen));
 		});
 	}
 };

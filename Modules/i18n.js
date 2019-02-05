@@ -3,7 +3,7 @@ const Constants = require("./Constants");
 module.exports = class i18n {
 	constructor(client) {
 		this.client = client;
-		this.pattern = /({(\w+(\.?\w+?){0,})})/g;
+		this.pattern = /({(\w+(\.?\w+?){0,})(\[[0..9]+\])*})/g;
 		this.lang;
 	}
 
@@ -11,14 +11,14 @@ module.exports = class i18n {
 		this.lang = code;
 	}
 
-	translate(ctx, str) {
+	translate(ctx, str, ...args) {
 		let lang = this.client.database.prepare("SELECT langCode FROM Language WHERE guildID = ?").get(ctx.guild.id);
 		if (!lang) lang = Constants.DEFAULT_LANG;
 		this.setLang(lang);
 		const langFile = require(`../Languages/${this.lang}.json`);
 		if (!langFile[str]) return ":x: ERROR: String not found.";
 		if (this.pattern.test(langFile[str])) {
-			return this.parse(ctx, langFile[str]);
+			return this.parse(ctx, langFile[str], ...args);
 		}
 		return langFile[str];
 	}
@@ -28,9 +28,13 @@ module.exports = class i18n {
 		console.log(args);
 		if (!tr) return str;
 		for (let m of tr) {
-			let f = m.match(/(\w+(\.?\w+?){0,})/)[0];
-			let func = eval(f);
-			str = str.replace(m, func);
+			let f = m.match(/(\w+(\.?\w+?){0,})(\[[0..9]+\])*/)[0];			
+			if (/[0..9]+/.test(f)) {
+				str = str.replace(m, args[+f]);
+			} else {
+				let func = eval(f);
+				str = str.replace(m, func);
+			}
 		}
 		return str;
 	}
