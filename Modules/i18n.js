@@ -3,7 +3,7 @@ const Constants = require("./Constants");
 module.exports = class i18n {
 	constructor(client) {
 		this.client = client;
-		this.pattern = /({(\w+(\.?\w+?){0,})(\[[0..9]+\])*})/g;
+		this.pattern = /({(\w+(\.?\w+?){0,})(\[[0-9]+\])*})/g;
 		this.lang;
 	}
 
@@ -28,8 +28,8 @@ module.exports = class i18n {
 		console.log(args);
 		if (!tr) return str;
 		for (let m of tr) {
-			let f = m.match(/(\w+(\.?\w+?){0,})(\[[0..9]+\])*/)[0];			
-			if (/[0..9]+/.test(f)) {
+			let f = m.match(/(\w+(\.?\w+?){0,})(\[[0-9]+\])*/)[0];			
+			if (/[0-9]+/.test(f)) {
 				str = str.replace(m, args[+f]);
 			} else {
 				let func = eval(f);
